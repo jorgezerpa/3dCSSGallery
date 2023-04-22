@@ -1,0 +1,89 @@
+:root {
+  --cubeWidth: 300px;
+  --cubeHeight: 150px;
+}
+
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.scene {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.cube {
+  position: relative;
+  height: var(--cubeHeight);
+  width: var(--cubeWidth);
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--cubeWidth) / -2)) rotateY(0deg);
+}
+
+
+.cube__face {
+  top: 0; left: 0;
+  position: absolute;
+  transform-origin: center;
+  height: var(--cubeHeight);
+  width: var(--cubeWidth);
+  background: purple;
+  border: 2px solid black;
+  backface-visibility: hidden;
+}
+
+.cube__face--front { transform: rotateY(0deg) translateZ(calc(var(--cubeWidth) / 2)); }
+.cube__face--back { transform: rotateY(180deg) translateZ(calc(var(--cubeWidth) / 2)); }
+.cube__face--right { transform: rotateY(90deg) translateZ(calc(var(--cubeWidth) / 2)); }
+.cube__face--left { transform: rotateY(-90deg) translateZ(calc(var(--cubeWidth) / 2)); }
+
+
+.cube1 .cube__face--front { background: red; }
+.cube1 .cube__face--back { background: blue; }
+.cube1 .cube__face--right { background: green; }
+.cube1 .cube__face--left { background: yellow; }
+
+.cube2 .cube__face--front { background: red; }
+.cube2 .cube__face--back { background: blue; }
+.cube2 .cube__face--right { background: green; }
+.cube2 .cube__face--left { background: yellow; }
+
+.cube3 .cube__face--front { background: red; }
+.cube3 .cube__face--back { background: blue; }
+.cube3 .cube__face--right { background: green; }
+.cube3 .cube__face--left { background: yellow; }
+
+
+
+.scene .button__prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.scene .button__next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
