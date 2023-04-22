@@ -1,6 +1,8 @@
 :root {
   --cubeWidth: 300px;
   --cubeHeight: 150px;
+  --cubeWidthMobile: 230px;
+  --cubeHeightMobile: 115px;
 }
 
 
@@ -20,6 +22,17 @@
   justify-content: center;
   align-items: center;
   perspective: 1000px;
+}
+
+.scene__background--image{
+  transition: 2s all;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .cube {
@@ -88,6 +101,7 @@
 
 
 .scene .button__prev {
+  z-index: 100;
   position: absolute;
   top: 50%;
   left: 0;
@@ -99,6 +113,7 @@
 }
 
 .scene .button__next {
+  z-index: 100;
   position: absolute;
   top: 50%;
   right: 0;
@@ -108,4 +123,12 @@
   padding: 10px;
   cursor: pointer;
 }
+
+@media (max-width: 400px) {
+  :root {
+    --cubeWidth: var(--cubeWidthMobile);
+    --cubeHeight: var(--cubeHeightMobile);
+  }
+}
+
 
