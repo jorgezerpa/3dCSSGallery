@@ -1,5 +1,18 @@
 import './style.css'
 
+const images = [
+    { htmlElements: document.querySelectorAll('.cube__face--front img'), image: '/img1.jpg' },
+    { htmlElements: document.querySelectorAll('.cube__face--back img'), image: '/img2.jpg' },
+    { htmlElements: document.querySelectorAll('.cube__face--right img'), image: '/img3.jpg' },
+    { htmlElements: document.querySelectorAll('.cube__face--left img'), image: '/img4.jpg' },
+]
+
+images.forEach(({ htmlElements, image }) => {
+    htmlElements.forEach((htmlElement) => {
+        htmlElement.setAttribute('src', image)
+    })
+})
+
 const cubes:NodeListOf<HTMLDivElement> = document.querySelectorAll('.cube')
 const buttonPrev:HTMLDivElement|null = document.querySelector('.scene .button__prev')
 const buttonNext:HTMLDivElement|null = document.querySelector('.scene .button__next')

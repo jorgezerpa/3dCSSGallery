@@ -38,8 +38,30 @@
   height: var(--cubeHeight);
   width: var(--cubeWidth);
   background: purple;
-  border: 2px solid black;
   backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.cube1 .cube__face img {
+  position: absolute;
+  top: 0px; 
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(var(--cubeHeight) * 3);
+}
+.cube2 .cube__face img {
+  position: absolute;
+  top: calc(var(--cubeHeight) * -1); 
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(var(--cubeHeight) * 3);
+}
+.cube3 .cube__face img {
+  position: absolute;
+  top: calc(var(--cubeHeight) * -2); 
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(var(--cubeHeight) * 3);
 }
 
 .cube__face--front { transform: rotateY(0deg) translateZ(calc(var(--cubeWidth) / 2)); }
